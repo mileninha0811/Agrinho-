@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agrinho 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-pastel: #cde8c5;
+      --verde-medio: #a9c5a0;
+      --marrom-pastel: #e4c9b0;
+      --bege-claro: #fdf6ec;
+      --rosa-pastel: #f8d9d6;
+      --texto-escuro: #4a4a4a;
+      --fundo-escuro: #2d2d2d;
+      --texto-claro: #f1f1f1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      background-color: var(--bege-claro);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      font-size: 100%;
+    }
+
+    body.dark-mode {
+      background-color: var(--fundo-escuro);
+      color: var(--texto-claro);
+    }
+
+    body.dark-mode section {
+      background-color: #3a3a3a;
+    }
+
+    body.dark-mode nav {
+      background-color: #555;
+    }
+
+    body.dark-mode nav a {
+      background-color: var(--verde-pastel);
+      color: #000;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover no-repeat;
+      color: rgb(49, 18, 18);
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      color: var(--verde-medio);
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--marrom-pastel);
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: rgb(243, 242, 242);
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      padding: 10px 16px;
+      background-color: var(--verde-medio);
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: var(--rosa-pastel);
+      color: var(--texto-escuro);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgb(250, 245, 245);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    section h2 {
+      color: var(--verde-medio);
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: var(--verde-pastel);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: var(--texto-escuro);
+      border-top: 4px dotted var(--rosa-pastel);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li::marker {
+      color: var(--verde-pastel);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--verde-medio);
+      font-family: 'Sora', sans-serif;
+    }
+
+    button {
+      padding: 10px;
+      background-color: var(--verde-medio);
+      color: rgb(247, 243, 243);
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--rosa-pastel);
+      color: var(--texto-escuro);
+    }
+
+    #topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--verde-pastel);
+      color: var(--texto-escuro);
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    #topo:hover {
+      background-color: var(--verde-medio);
+    }
+
+    #acessibilidade {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: var(--marrom-pastel);
+      padding: 10px;
+      border-radius: 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    #acessibilidade button {
+      background-color: var(--verde-medio);
+      border: none;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #acessibilidade button:hover {
+      background-color: var(--rosa-pastel);
+      color: var(--texto-escuro);
+    }
+  </style>
+</head>
+<body>
+  <a id="topo" href="#">↑</a>
+
+  <div id="acessibilidade">
+    <button onclick="aumentarFonte()">A+</button>
+    <button onclick="diminuirFonte()">A-</button>
+    <button onclick="resetarFonte()">Reset</button>
+    <button onclick="alternarModo()">Modo</button>
+  </div>
+
+  <header>
+    <h1>Agrinho 2025</h1>
+    <p>Educação Ambiental e a Conexão Campo-Cidade com Muito Carinho</p>
+  </header>
+
+  <nav>
+    <a href="#tema">Tema</a>
+    <a href="#importancia">Importância</a>
+    <a href="#acoes">Ações</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="tema">
+    <h2>Sobre o Tema</h2>
+    <p>Educação ambiental é um processo que ensina pessoas de todas as idades a compreenderem o meio ambiente, seus problemas e a importância de cuidar da natureza. Ela promove atitudes responsáveis e sustentáveis em relação ao uso dos recursos naturais. A conexão campo-cidade mostra como o meio rural (onde se planta, colhe e cuida da terra) e o meio urbano (onde se consome, vive e trabalha de forma mais industrializada) estão interligados.</p>
+    <ul>
+      <li>A comida que chega à cidade vem do campo;</li>
+      <li>A água, o ar limpo e até a energia também dependem do equilíbrio ambiental que muitas vezes começa na zona rural;</li>
+      <li>Já a cidade influencia o campo com tecnologia, mercados consumidores e até poluição.</li>
+    </ul>
+    <ul>
+      <li>Para quem vive na cidade, ela mostra de onde vêm os alimentos, a importância de preservar rios, florestas e produtores rurais;</li>
+      <li>Para quem vive no campo, ela ensina a produzir com consciência, sem agredir o meio ambiente, usando técnicas sustentáveis.</li>
+    </ul>
+  </section>
+
+ <section id="importancia" style="display: flex; align-items: flex-start; gap: 30px; margin-top: 30px;">
+  <div>
+    <img src="https://i.pinimg.com/736x/b8/a3/79/b8a37985105e70064183c02f72550676.jpg" alt="Natureza e agricultura" style="max-width: 500px; border-radius: 10px;">
+  </div>
+  <div style="flex: 1;">
+    <h2>Por que isso é importante?</h2>
+    <p>A educação ambiental ajuda tanto moradores do campo quanto da cidade a entenderem que ambos dependem um do outro.</p>
+    <p>Para quem vive na cidade, ela mostra de onde vêm os alimentos, a importância de preservar rios, florestas e produtores rurais.</p>
+    <p>Para quem vive no campo, ela ensina a produzir com consciência, sem agredir o meio ambiente, usando técnicas sustentáveis.</p>
+    <p>Essa consciência mútua cria uma cooperação mais justa e equilibrada, onde todos cuidam do planeta.</p>
+  </div>
+</section>
+  <section id="acoes" style="display: flex; align-items: flex-start; gap: 20px;">
+  <div>
+    <h2>Ações Sustentáveis e Criativas</h2>
+    <ul>
+      <li>Criar hortinhas com canteiros recicláveis.</li>
+      <li>Trocar sacolas plásticas por ecobags estampadas.</li>
+      <li>Organizar gincanas de reciclagem na escola.</li>
+      <li>Visitar sítios e aprender sobre a vida rural.</li>
+      <li>Plantar árvores em datas especiais.</li>
+      <li>Desenvolver soluções que integrem o rural e o urbano com harmonia.</li>
+    </ul>
+  </div>
+  <a href="https://pin.it/213KWNKqT" target="_blank">
+    <img src="https://i.pinimg.com/736x/0d/34/09/0d3409a31c2e0202b6469d4e37583186.jpg" style="max-width: 300px;">
+  </a>
+</section>
+  <section>
+    <h2>Educação Ambiental</h2>
+    <p>A educação ambiental é a ponte que une campo e cidade. Ela mostra que, para termos um futuro melhor, todos os agricultores, estudantes e moradores urbanos precisam se entender, se respeitar e cuidar juntos do meio ambiente.</p>
+  <img 
+    src="https://i.pinimg.com/736x/79/b6/e1/79b6e18c7db992f3903135cc6f18cc88.jpg" 
+    alt="Imagem centralizada" 
+    style="width: 900px; height: auto;">
+</div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <br>
+  <div style="text-align: center; margin-top: 20px;">
+  <img 
+    src="https://i.pinimg.com/736x/66/d5/ac/66d5acb9649716d1df42788bafe0b804.jpg" 
+    alt="Imagem centralizada" 
+    style="width: 900px; height: auto;">
+</div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 - Projeto Agrinho com amor, cor e natureza. Desenvolvido com muito cuidado para um mundo melhor.</p>
+  </footer>
+
+  <script>
+    let tamanhoFonteAtual = 100;
+
+    function aumentarFonte() {
+      if (tamanhoFonteAtual < 150) {
+        tamanhoFonteAtual += 10;
+        document.body.style.fontSize = tamanhoFonteAtual + '%';
+      }
+    }
+
+    function diminuirFonte() {
+      if (tamanhoFonteAtual > 70) {
+        tamanhoFonteAtual -= 10;
+        document.body.style.fontSize = tamanhoFonteAtual + '%';
+      }
+    }
+
+    function resetarFonte() {
+      tamanhoFonteAtual = 100;
+      document.body.style.fontSize = '100%';
+    }
+
+    function alternarModo() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>

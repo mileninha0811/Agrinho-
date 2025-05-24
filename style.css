@@ -1,0 +1,135 @@
+:root {
+  --verde-pastel: #cde8c5;
+  --verde-medio: #a9c5a0;
+  --marrom-pastel: #e4c9b0;
+  --bege-claro: #fdf6ec;
+  --texto-escuro: #4a4a4a;
+  --rosa-pastel: #f8d9d6;
+}body {
+  margin: 0;
+  font-family: 'Sora';
+  background-color: var(--bege-claro);
+  color: var(--texto-escuro);
+  background-image: url(https://i.pinimg.com/736x/44/66/3a/44663a934acc7c337f328f7bfece4e0f.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sora', cursive, sans-serif;
+  background-color: var(--bege-claro);
+  color: var(--texto-escuro);
+}
+header {
+  background-color: var(--verde-pastel);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px dotted var(--marrom-pastel);
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: var(--verde-medio);
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+background-image url:(https://i.pinimg.com/736x/44/66/3a/44663a934acc7c337f328f7bfece4e0f.jpg);
+nav {
+  background-color: var(--marrom-pastel);
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 18px;
+  background-color: var(--verde-medio);
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--rosa-pastel);
+  color: #5b5b5b;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  color: var(--verde-medio);
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li::marker {
+  color: var(--verde-pastel);
+}
+
+footer {
+  background-color: var(--verde-pastel);
+  color: var(--texto-escuro);
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  border-top: 5px dotted var(--rosa-pastel);
+  font-size: 0.95em;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  nav a {
+    margin: 5px 0 
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+  .visual-section .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.visual-section .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.visual-section .image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.visual-section .image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+}
